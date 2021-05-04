@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Dashboard</title>
+</head>
+<body>
+    <section class="top">
+        <div class="dashboard-top-container">
+            <div class="left">
+                <div class="title">
+                    <h1 id="dashboard">Dashboard</h1>
+                </div>
+                <div class="top-down">
+                <div class="user-image">
+                    <img src="photo.jpeg" alt="">
+                </div>
+                <div class="name-field">
+                    <h3>Welcome <span class="my-name"></span>Adedayo!</span></h3>
+                    <p class="date">May, 1st</p>
+                    <h2 class="do-today">What Do You Want To Do Today?</h2>
+                </div>
+            </div>
+            </div>
+
+            <div class="right">
+                <div class="overall">
+                    <button>Overall</button>
+                </div>
+                <div class="right-bottom">
+                <div class="complete">
+                    <div id="green" class="circle"></div>
+                    <div class="percentage">
+                        <h2>30%</h2>
+                        <p>Completed</p>
+                    </div>
+                </div>
+                <div class="complete">
+                    <div id="yellow" class="circle"></div>
+                    <div class="percentage">
+                        <h2>50%</h2>
+                        <p>Pending</p>
+                    </div>
+                </div>
+                <div class="complete">
+                    <div id="red" class="circle"></div>
+                    <div class="percentage">
+                        <h2>20%</h2>
+                        <p>Incompleted</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- START OF THE BODY OF THE PAGE - THE ONGOING PROJECTS SECTION -->
+        <div class="ongoing-projects">
+            <div class="ongoing-title">
+                <div>
+                    <h2 id="ongoing-title">Today's Plan</h2>
+                </div>
+                <div>
+                    <button class="add-task">Add Task</button>
+                </div>
+            </div>
+
+            <div class="card-container">
+            <div class="cards">
+                <div class="task-card">
+                    <div class="card-title">
+                        <h3>Become a Millionaire</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>I want to be the world's richest man by the age of 40. Yes, I Can!!</p>
+                    </div>
+                    <div class="days-left">
+                        <p><span id="day">4</span> days left</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <!-- bottom of the page -->
+        <div class="buttom-page">
+            <div class="buttom-header">
+                <h3 class="recent">Recently Added</h3>
+            </div>
+        </div>
+        <div class="list">
+            <ol class="recent-list">
+                <li>Become a Millionaire</li>
+                <li>Become a Millionaire</li>
+            </ol>
+        </div>    
+    </section>
+
+    <section class="footer-buttons">
+        <div class="buttons">
+            <div class="home-icon"><i class="fas fa-home"></i></div>
+            <div class="calender">
+                <i class="fas fa-calendar-week"><input type="date" name="" id=""></i>  
+            </div>
+            <div class="plus"><i class="fas fa-plus"></i></div>
+            <div class="user"><i class="fas fa-user-tie"></i></div>
+            <div class="setting"><i class="fas fa-cog"></i></div>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
