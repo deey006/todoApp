@@ -340,6 +340,9 @@ color: rgb(133, 27, 233);
         margin-bottom: .6rem;
         font-size: 16px;    
       }
+      .buttons{
+        padding: 0 1rem;
+      }    
 }
 @media screen and (max-width:540px){
     .buttons i {
@@ -490,6 +493,9 @@ color: rgb(133, 27, 233);
         padding: .2rem 2rem .2rem .5rem;
         font-size: 12px;
     }
+    .buttons{
+        padding: 0 .5rem;
+      }    
 
     .name-field h3 {
         font-size: 12px;
