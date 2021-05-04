@@ -6,6 +6,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .top {
@@ -232,7 +234,7 @@ color: rgb(133, 27, 233);
 
 @media screen and (max-width:1024px){
     .top {
-        margin-bottom: 5rem;
+        margin-bottom: 4rem;
     }
     .dashboard-top-container{
         flex-direction: column;
@@ -300,7 +302,7 @@ color: rgb(133, 27, 233);
     .top {
         width: 100vw;
         overflow: hidden;
-        margin-bottom: 5rem;
+        margin-bottom: 4rem;
     }
     .footer-buttons {
         top: 1024px;
@@ -346,7 +348,7 @@ color: rgb(133, 27, 233);
 }
 @media screen and (max-width:540px){
     .buttons i {
-        font-size: 24px;
+        font-size: 22px;
         }        
 
     .ongoing-title, .buttom-header h3 {
@@ -360,7 +362,7 @@ color: rgb(133, 27, 233);
 
     .top {
         width: 100vw;
-        margin: 5rem;
+        margin-bottom: 3rem;
     }
     .card-title h3 {
         font-size: 14px;
@@ -424,12 +426,11 @@ color: rgb(133, 27, 233);
         margin-left: 1rem;
     }    
     .footer-buttons {
-        width: 89.1vw;
-        left: 1.19rem;
+        width: 100vw;
         right: 0; 
     }   
     .buttons i {
-        font-size: 22px;
+        font-size: 20px;
         }        
   
 }
@@ -455,7 +456,7 @@ color: rgb(133, 27, 233);
         height: 3rem;
     }     
     .top {
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
     }
 }
 @media screen and (max-width:375px){
@@ -512,15 +513,12 @@ color: rgb(133, 27, 233);
         width: 100vw;
         height: 2rem;
     }
-    .top {
-        margin-bottom: 3rem;
-    }
 }
 @media screen and (max-width:280px){
     .footer-buttons {
         top: 600px;
         width: 100vw;
-        height: 2rem;
+        height: 1.5rem;
     }
 
     .ongoing-title, .buttom-header h3 {
