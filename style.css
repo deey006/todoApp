@@ -11,11 +11,11 @@ body {
 }
 
 .top {
-    margin-bottom: 4.5rem;
+    /* margin-bottom: 4.5rem; */
     background-color: rgba(231, 231, 231, 0.5);
     width: 70vw;
     color: seashell;
-    padding: 0 1rem;
+    padding: 0 1rem 4.5rem 1rem;
     box-shadow: 0 5px 30px rgba(222, 222, 222, 0.5);
 }
 
@@ -39,12 +39,9 @@ body {
     font-size: 30px;
     padding: 1rem 5rem 1rem 2rem;
     border-radius: 19px;
-    -webkit-border-radius: 19px;
-    -moz-border-radius: 19px;
-    -ms-border-radius: 19px;
-    -o-border-radius: 19px;
     outline: none;
     border: none;
+    
 }
 .right-bottom div {
     margin-bottom: 2rem;
@@ -234,7 +231,7 @@ color: rgb(133, 27, 233);
 
 @media screen and (max-width:1024px){
     .top {
-        margin-bottom: 4rem;
+        padding-bottom: 4rem;
     }
     .dashboard-top-container{
         flex-direction: column;
@@ -362,7 +359,7 @@ color: rgb(133, 27, 233);
 
     .top {
         width: 100vw;
-        margin-bottom: 3rem;
+        padding-bottom: 2rem;
     }
     .card-title h3 {
         font-size: 14px;
@@ -372,8 +369,7 @@ color: rgb(133, 27, 233);
     }
     .days-left {
         font-size: 16px;
-    }
-    
+    }    
     
     .user-image {
         margin-right: .5rem;
@@ -403,10 +399,6 @@ color: rgb(133, 27, 233);
         margin-top: 4px;
         margin-right: 4px;
         border-radius: 25px;
-        -webkit-border-radius: 25px;
-        -moz-border-radius: 25px;
-        -ms-border-radius: 25px;
-        -o-border-radius: 25px;
 }
      .complete{
          margin-left: 2rem;
@@ -426,8 +418,10 @@ color: rgb(133, 27, 233);
         margin-left: 1rem;
     }    
     .footer-buttons {
+        left: .27rem;
+        height: 3rem;
         width: 100vw;
-        right: 0; 
+        right: 0; top: 710px;
     }   
     .buttons i {
         font-size: 20px;
@@ -441,7 +435,7 @@ color: rgb(133, 27, 233);
         height: 3rem;
     }  
     .top {
-        margin-bottom: 3rem;
+        padding-bottom: 3rem;
     }
     .recent-list li {
         margin-bottom: .4rem;
@@ -451,12 +445,12 @@ color: rgb(133, 27, 233);
 }   
 @media screen and (max-width:411px){
     .footer-buttons {
-        top: 731px;
+        top: 700px;
         width: 100vw;
-        height: 3rem;
+        height: 2rem;
     }     
     .top {
-        margin-bottom: 2.5rem;
+        padding-bottom: 2.5rem;
     }
 }
 @media screen and (max-width:375px){
@@ -465,7 +459,7 @@ color: rgb(133, 27, 233);
         height: 3rem;
     }
     .top {
-        margin-bottom: 3rem;
+        padding-bottom: 3rem;
     }
     .recent-list li {
         margin-bottom: .4rem;
@@ -486,6 +480,7 @@ color: rgb(133, 27, 233);
 
 }
 @media screen and (max-width:360px){
+    
     .ongoing-title, .buttom-header h3 {
         font-size: 13px;
     }
@@ -509,8 +504,9 @@ color: rgb(133, 27, 233);
         margin-left: .3rem;
     }    
     .footer-buttons {
-        top: 640px;
-        width: 100vw;
+        left: .1rem;
+        top: 600px;
+        width: 102vw;
         height: 2rem;
     }
 }
