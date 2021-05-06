@@ -313,7 +313,7 @@ color: rgb(133, 27, 233);
     }
 
     .footer-buttons {
-        top: 832px;
+        top: 862px;
         bottom: 0;
         width: 100vw;
         height: 5rem;
@@ -430,7 +430,7 @@ color: rgb(133, 27, 233);
 }
 @media screen and (max-width:414px){
     .footer-buttons {
-        top: 736px;
+        top: 690px;
         width: 100vw;
         height: 3rem;
     }  
@@ -455,7 +455,7 @@ color: rgb(133, 27, 233);
 }
 @media screen and (max-width:375px){
     .footer-buttons {
-        top: 812px;
+        top:720px;
         height: 3rem;
     }
     .top {
@@ -505,10 +505,16 @@ color: rgb(133, 27, 233);
     }    
     .footer-buttons {
         left: .1rem;
-        top: 600px;
+        top: 610px;
         width: 102vw;
         height: 2rem;
     }
+}
+@media screen and (max-width:320px){
+    .footer-buttons {
+        top: 545px;
+        height: 2rem;
+}
 }
 @media screen and (max-width:280px){
     .footer-buttons {
