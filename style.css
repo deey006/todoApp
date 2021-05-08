@@ -1,6 +1,5 @@
 body {
     box-sizing: border-box;
-    background-color: rgb(66, 66, 66);
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
@@ -12,11 +11,10 @@ body {
 
 .top {
     /* margin-bottom: 4.5rem; */
-    background-color: rgba(231, 231, 231, 0.5);
-    width: 70vw;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 4%, rgba(31,31,115,0.48783263305322133) 48%, rgba(0,212,255,1) 100%);    width: 70vw;
     color: seashell;
     padding: 0 1rem 4.5rem 1rem;
-    box-shadow: 0 5px 30px rgba(222, 222, 222, 0.5);
+    box-shadow: 0  5px 5px 10px rgba(222, 222, 222, 0.5);
 }
 
 .dashboard-top-container{
@@ -37,12 +35,19 @@ body {
 }
 .overall button {
     font-size: 30px;
-    padding: 1rem 5rem 1rem 2rem;
-    border-radius: 19px;
+    padding: .6rem 5rem .6rem 1.5rem;
+    border-radius: 16px;
     outline: none;
     border: none;
-    
+    cursor: pointer;
 }
+.overall button:hover{
+    filter: brightness(1.15);
+}
+.overall button:active{
+    transform: translateY(3px);
+}
+
 .right-bottom div {
     margin-bottom: 2rem;
     font-size: 25px;
@@ -83,6 +88,7 @@ body {
     background-color: red;
 }
 .title h1{
+    color: #1f1135;
     text-align: center;
     font-size: 50px;
     font-weight: 700;
@@ -97,7 +103,7 @@ body {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 5px rgba(255, 255, 255, .3);
 }
 
 .user-image img {
@@ -108,7 +114,7 @@ body {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 5px rgba(255, 255, 255, .3);
 }
 .top-down{
     display: flex;
@@ -145,7 +151,7 @@ body {
 }
 .add-task {
     margin-right: 12rem;
-    background-color: rgb(133, 27, 233);
+    background: linear-gradient (to bottom, rgb(169, 38, 230),  rgb(133, 27, 233)) ;
     padding: .8rem 5.2rem .8rem 2rem;
     font-size: 22px;
     outline: none;
@@ -153,26 +159,31 @@ body {
     cursor: pointer;
     font-weight: bold;
     letter-spacing: 1px;
+    box-shadow:inset 0 10px 25px 10px rgb(122, 6, 230);  
+    border-radius: 10px;
 }
 .add-task:hover {
     transform: scale(1.1);
     transition: .5s;
-    background-color: rgb(130, 7, 245);
+    filter: brightness(1.2);
 }
 .add-task:active {
-    transform: scaleY(3px);
+    transform: translateY(3px);
 }
 .card-container {
+    background-color: #e2daeb;
     margin-bottom: 2rem;
     display: inline-flex;
     max-width: 100%;
     overflow-x: auto;
-    color: black;
+    color: #1b1325;
     padding: 1rem;
     box-shadow: 0px 2px 10px 2px rgba(236, 236, 236, 0.2);  
 
 }
 .cards {
+    width: 100px;
+    height: 300px;
     display: inline-block;
     margin-right: 1.5rem;
     box-shadow: -10px 5px 30px 10px rgba(122, 121, 121, 0.5);  
@@ -181,10 +192,11 @@ body {
 
 }
 .card-title h3 {
+    color: #1f1135;
     padding-bottom: 10px;
     font-size: 20px;
     margin-bottom: 2rem;
-    border-bottom: 2px solid rgb(133, 27, 233);
+    border-bottom: 2px solid gold;
     letter-spacing: 1px;
     text-shadow: 1px 2px 1px  rgb(236, 236, 236);
 }
@@ -196,7 +208,7 @@ body {
 .days-left {
     font-size: 22px;
     letter-spacing: 1px;
-    color: rgb(133, 27, 233);
+    color: gold;
 }
 .buttom-page{
     padding: 0 2rem;
@@ -211,8 +223,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: red;
-    bottom: 0;
+    background: linear-gradient(90deg, rgba(2,0,36,0.8715861344537815) 34%, rgba(0,212,255,1) 88%);    bottom: 0;
     width: 71.9vw;
     height: 5rem;
 }
@@ -225,11 +236,125 @@ body {
 }
 
 .buttons i {
-font-size: 30px;
-color: rgb(133, 27, 233);
+font-size: 35px;
+color: gold;
+cursor: pointer;
 }
+.buttons i:hover{
+    filter: brightness(2);
+}
+.buttons i:active{
+    transform: translateY(3px);
+}
+.create-top {
+    position: relative;
+    top: -25rem;
+    animation: moveTop 2s ease-in .5s normal forwards;
+}
+.create-task {
+    top: 0;
+    bottom: 0;
+    left: 17rem;
+    position: absolute;
+    padding-bottom: 6rem;
+    background-color: rgba(251, 245, 218, 0.9);
+    width: 72vw;
+    height: 80vw;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+.cancel {
+    position: fixed;
+    z-index: 8;
+    top: 2rem;
+    right: 22rem;
+    font-size: 36px;
+    color: crimson;
+    cursor: pointer;
+}
+.cancel:hover{
+    filter: brightness(1.2);
+    transform: scale(1.2);
+}
+.cancel:active{
+    transform: translateY(3px);
+}
+.smiley-face {
+    max-width: 250px;
+    height: 250px;
+}
+.smiley-face img{
+    width: 100%;
+    height: 100%;
+}
+.create-top h1 {
+    animation: welcome 4s infinite ;
+}
+.line{
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0 ;
+    border-bottom: 4px solid rgb(133, 27, 233);
+    top: -25rem;
+    animation: moveTop 2s ease-in .5s normal forwards;
+}
+.create-down{
+    background-color: cornsilk;
+    position: relative;
+    margin-top: 1rem;
+    padding: 0 2rem 0 2rem;
+    box-shadow: -10px 5px 30px 10px wheat;  
+    width: 800px;
+}
+.header-title h1{
+    text-align: center;
+font-size: 40px;
+}
+.input-field{
+    display: flex;
+    flex-direction: column;
+}
+.input-field input {
+    box-shadow: 0px 2px 5px 2px whitesmoke;  
+    width: 90%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 1.2rem 2rem;
+    font-size: 16px;
 
+}
+.input-field label {
+    padding: 15px 0;
+    margin-left: 1.2rem;
+    font-size: 18px;
+}
+.submit-btn {
+    margin: 2rem 0;
+    width: 100%;
+    padding: 1.4rem 0;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 12px;
+    background: linear-gradient (to bottom, rgb(169, 38, 230),  rgb(133, 27, 233)) ;
+    cursor: pointer;
+    border: none;
+    box-shadow:inset 0 10px 25px 10px rgb(122, 6, 230);  
+
+}
+.submit-btn:hover {
+    filter: brightness(1.1);
+}
+.submit-btn:active {
+    transform: translateY(3px);
+}
 @media screen and (max-width:1024px){
+    body {
+        overflow-x: hidden;
+    }
     .top {
         padding-bottom: 4rem;
     }
@@ -280,6 +405,9 @@ color: rgb(133, 27, 233);
     .left {
         margin-bottom: 2rem;
     }
+    .create-down{
+        width: 600px;
+    }
 }
 @media screen and (max-width:768px){
     .buttons i {
@@ -299,13 +427,7 @@ color: rgb(133, 27, 233);
     .top {
         width: 100vw;
         overflow: hidden;
-        margin-bottom: 4rem;
     }
-    .footer-buttons {
-        top: 1024px;
-        width: 74.3vw;
-        height: 3rem;
-    }     
     .user-image {
         margin-right: 1rem;
         width: 100px;
@@ -313,13 +435,40 @@ color: rgb(133, 27, 233);
     }
 
     .footer-buttons {
-        top: 862px;
+        opacity: .8;
+        position: fixed;
+        align-items: stretch;
+        justify-content: space-evenly;
+        top: 5rem;
+        left: 0rem;
         bottom: 0;
-        width: 100vw;
-        height: 5rem;
-        margin-bottom: 0;
+        width: 5rem;
+        height: 100vw;
+    }
+    .footer-menu{
+        /* position: absolute; */
+        top: 50%;
+        transform: translate(-50%);
+        /* left: 7.9rem; */
+        color: goldenrod;
+        font-size: 45px;
+        font-weight: 900;
+        cursor: pointer;
+    }
+    .footer-menu:hover{
+        filter: brightness(1.2);
     }
 
+.buttons {
+    margin-right: 2rem;
+    font-size: 30px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+    
+}
     
     .user-image img {
         width: 100%;
@@ -341,7 +490,30 @@ color: rgb(133, 27, 233);
       }
       .buttons{
         padding: 0 1rem;
-      }    
+      }   
+      .create-down{
+        width: 500px;
+    } 
+    .create-task {
+        width: 100vw;
+    }   
+    .header-title h1{
+    font-size: 20px;
+    }
+    .input-field input {
+        padding: .8rem 1rem;
+        font-size: 14px;
+    
+    }
+    .input-field label {
+        font-size: 14px;
+    }
+    .submit-btn {
+        width: 95%;
+        padding: .7rem 0;
+        font-size: 18px;
+        font-weight: 700;
+    }         
 }
 @media screen and (max-width:540px){
     .buttons i {
@@ -351,16 +523,15 @@ color: rgb(133, 27, 233);
     .ongoing-title, .buttom-header h3 {
         font-size: 15px;
     }
+    .footer-buttons {
+        width: 3rem;
+    }
     .add-task {
         margin-right: .2rem;
         padding: .4rem 2rem .4rem .8rem;
         font-size: 14px;
     }
 
-    .top {
-        width: 100vw;
-        padding-bottom: 2rem;
-    }
     .card-title h3 {
         font-size: 14px;
     }
@@ -417,50 +588,48 @@ color: rgb(133, 27, 233);
         margin-top: 1rem;
         margin-left: 1rem;
     }    
-    .footer-buttons {
-        left: .27rem;
-        height: 3rem;
-        width: 100vw;
-        right: 0; top: 710px;
-    }   
     .buttons i {
         font-size: 20px;
         }        
-  
+        .create-down{
+            width: 400px;
+        }  
+        .create-task {
+            width: 100vw;
+        } 
+        .create-top h1 {
+            font-size: 16px;
+        }                     
 }
 @media screen and (max-width:414px){
-    .footer-buttons {
-        top: 690px;
-        width: 100vw;
-        height: 3rem;
-    }  
-    .top {
-        padding-bottom: 3rem;
-    }
     .recent-list li {
         margin-bottom: .4rem;
         font-size: 14px;    
       }
-
+      .create-down{
+        width: 300px;
+    }  
+    .header-title h1{
+        font-size: 15px;
+        }
+        .input-field input {
+            padding: .8rem 1rem;
+            font-size: 12px;
+        
+        }
+        .input-field label {
+            font-size: 14px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: .7rem 0;
+            font-size: 14px;
+            font-weight: 400;
+        
+        }         
+      
 }   
-@media screen and (max-width:411px){
-    .footer-buttons {
-        top: 700px;
-        width: 100vw;
-        height: 2rem;
-    }     
-    .top {
-        padding-bottom: 2.5rem;
-    }
-}
 @media screen and (max-width:375px){
-    .footer-buttons {
-        top:720px;
-        height: 3rem;
-    }
-    .top {
-        padding-bottom: 3rem;
-    }
     .recent-list li {
         margin-bottom: .4rem;
         font-size: 12px;    
@@ -480,7 +649,10 @@ color: rgb(133, 27, 233);
 
 }
 @media screen and (max-width:360px){
-    
+    .footer-menu{
+        left: 3.9rem;
+        font-size: 35px;
+    }
     .ongoing-title, .buttom-header h3 {
         font-size: 13px;
     }
@@ -503,25 +675,11 @@ color: rgb(133, 27, 233);
         margin-top: 1.7rem;
         margin-left: .3rem;
     }    
-    .footer-buttons {
-        left: .1rem;
-        top: 610px;
-        width: 102vw;
-        height: 2rem;
-    }
-}
-@media screen and (max-width:320px){
-    .footer-buttons {
-        top: 545px;
-        height: 2rem;
-}
+    .create-down{
+        width: 250px;
+    }    
 }
 @media screen and (max-width:280px){
-    .footer-buttons {
-        top: 600px;
-        width: 100vw;
-        height: 1.5rem;
-    }
 
     .ongoing-title, .buttom-header h3 {
         font-size: 10px;
@@ -535,10 +693,6 @@ color: rgb(133, 27, 233);
         margin-bottom: .2rem;
         font-size: 8px;    
       }
-
-    .top {
-        width: 100vw;
-    }
     
     .user-image {
         margin-right: .5rem;
@@ -603,4 +757,10 @@ color: rgb(133, 27, 233);
     0% { color: royalblue; transform: rotate(10deg); transform: scale(1.3); -webkit-transform: scale(1.3); -moz-transform: scale(1.3); -ms-transform: scale(1.3); -o-transform: scale(1.3); }
     50% { color: rgb(169, 38, 230); transform: rotate(-10deg); transform:scale(0.5) ; -webkit-transform:scale(0.5) ; -moz-transform:scale(0.5) ; -ms-transform:scale(0.5) ; -o-transform:scale(0.5) ; }
     0% { color: rgb(65, 225, 204); transform: rotate(20deg); transform: scale(1.3); -webkit-transform: scale(1.3); -moz-transform: scale(1.3); -ms-transform: scale(1.3); -o-transform: scale(1.3); }
+}
+@keyframes moveTop {
+    0%{top: -25rem; opacity: 0;}
+    50%{opacity: 0.4;}
+    75%{opacity: 0.8;}
+    100%{top: .1rem; opacity: 1;}
 }

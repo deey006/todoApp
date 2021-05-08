@@ -9,7 +9,7 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <section class="top" >
+    <section class="top">
         <div class="dashboard-top-container">
             <div class="left">
                 <div class="title">
@@ -70,7 +70,6 @@
 
             <div class="card-container">
             <div class="cards">
-                <div class="task-card">
                     <div class="card-title">
                         <h3>Become a Millionaire</h3>
                     </div>
@@ -80,7 +79,6 @@
                     <div class="days-left">
                         <p><span id="day">4</span> days left</p>
                     </div>
-                </div>
             </div>
         </div>
         </div>
@@ -93,17 +91,51 @@
         </div>
         <div class="list">
             <ol class="recent-list">
-                <li>Become a Millionaire</li>
-                <li>Become a Millionaire</li>
             </ol>
         </div>    
     </section>
 
+    <div class="create-task">
+        <div class="cancel">
+            <i class="fas fa-window-close"></i>
+        </div>
+        <div class="create-top" >
+            <h1 class="top-content"><span class="name">Adedayo</span>, You Have Added a New Task.</h1>
+            <div class="smiley-face">
+                <img src="tenor.gif" alt="img">
+            </div>    
+        </div>
+        <div class="line"></div>
+        <div class="create-down">
+            <div class="header-title">
+                <h1>Create Task</h1>
+            </div>
+            <form id="form" action="submit">
+            <div class="input-field">
+                <label for="title-input">Task Title</label>
+                <input type="text" id="title-input" placeholder="Add New Task Here" required>
+            </div>
+            <div class="input-field">
+                <label for="deadline-input">Deadline</label>
+                <input type="date" name="deadline-input" id="deadline-input" placeholder="Choose Your Deadline" required>
+            </div>
+            <div class="input-field">
+                <label for="comment">Add Comment</label>
+                <input type="text" name="attach-file" id="comment" placeholder="Your Comment" required>
+            </div>
+            <div class="submit">
+                <button class="submit-btn">Add Task</button>
+            </div>
+        </form>
+        </div>
+    </div>
+
     <section class="footer-buttons">
+        <div class="footer-menu"><i class="fas fa-caret-square-right"></i></div>
         <div class="buttons">
             <div class="home-icon"><i class="fas fa-home"></i></div>
             <div class="calender">
-                <i class="fas fa-calendar-week"><input type="date" name="" id="" hidden></i>  
+                <i class="fas fa-calendar-week"></i>  
             </div>
             <div class="plus"><i class="fas fa-plus"></i></div>
             <div class="user"><i class="fas fa-user-tie"></i></div>
