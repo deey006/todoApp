@@ -183,7 +183,7 @@ body {
 }
 .cards {
     width: 100px;
-    height: 300px;
+    height: 330px;
     display: inline-block;
     margin-right: 1.5rem;
     box-shadow: -10px 5px 30px 10px rgba(122, 121, 121, 0.5);  
@@ -211,20 +211,21 @@ body {
     color: gold;
 }
 .buttom-page{
-    padding: 0 2rem;
+    padding: 0 4rem;
 }
  .recent-list li{
     margin-bottom: .8rem;
     font-size: 18px;
 }
 .footer-buttons {
+    top: 68.9rem;
     position: fixed;
     z-index: 4;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(90deg, rgba(2,0,36,0.8715861344537815) 34%, rgba(0,212,255,1) 88%);    bottom: 0;
-    width: 71.9vw;
+    width: 71.1vw;
     height: 5rem;
 }
 .buttons{
@@ -254,12 +255,12 @@ cursor: pointer;
 .create-task {
     top: 0;
     bottom: 0;
-    left: 17rem;
+    left: 23rem;
     position: absolute;
     padding-bottom: 6rem;
     background-color: rgba(251, 245, 218, 0.9);
-    width: 72vw;
-    height: 80vw;
+    width: 71.5vw;
+    height: 44vw;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -351,6 +352,46 @@ font-size: 40px;
 .submit-btn:active {
     transform: translateY(3px);
 }
+.footer-menu i{
+display: none;
+}
+.card-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.card-buttons button {
+    padding: 5px 9px 5px 9px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+.task-complete {
+    color: white;
+    background: rgb(10, 221, 10);
+    box-shadow:inset 0 2px 5px 3px greenyellow;  
+}
+.delete-task {
+    color: white;
+    background: rgb(218, 58, 58);
+    box-shadow:inset 0 2px 5px 3px rgb(255, 47, 92);  
+}
+.delete-task:hover{
+    filter: brightness(1.2);
+}
+.task-complete:hover{
+    filter: brightness(1.2);
+}
+.task-complete:active{
+    transform: translateY(2px);
+}
+.delete-task:active{
+    transform: translateY(2px);
+}
+
 @media screen and (max-width:1024px){
     body {
         overflow-x: hidden;
@@ -410,6 +451,12 @@ font-size: 40px;
     }
 }
 @media screen and (max-width:768px){
+    .cancel {
+        top: 1rem;
+        left:80%;
+        font-size: 28px;
+    }
+    
     .buttons i {
         font-size: 26px;
         }        
@@ -435,6 +482,7 @@ font-size: 40px;
     }
 
     .footer-buttons {
+        display: flex;
         opacity: .8;
         position: fixed;
         align-items: stretch;
@@ -444,14 +492,17 @@ font-size: 40px;
         bottom: 0;
         width: 5rem;
         height: 100vw;
+        transition: ease-in 1s;
     }
-    .footer-menu{
-        /* position: absolute; */
-        top: 50%;
-        transform: translate(-50%);
-        /* left: 7.9rem; */
+    .left{
+        left: -5rem;
+    }
+    .footer-menu i{
+        left:rem;
+        display: block;
+        position: absolute;
         color: goldenrod;
-        font-size: 45px;
+        font-size: 20px;
         font-weight: 900;
         cursor: pointer;
     }
@@ -460,10 +511,10 @@ font-size: 40px;
     }
 
 .buttons {
-    margin-right: 2rem;
+    display: flex;
     font-size: 30px;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     justify-content: space-evenly;
     height: 100%;
     width: 100%;
@@ -495,7 +546,13 @@ font-size: 40px;
         width: 500px;
     } 
     .create-task {
+        margin: 0;
         width: 100vw;
+        height: 118.5vw;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
     }   
     .header-title h1{
     font-size: 20px;
@@ -516,6 +573,10 @@ font-size: 40px;
     }         
 }
 @media screen and (max-width:540px){
+    .cancel {
+        font-size: 18px;
+    }
+
     .buttons i {
         font-size: 22px;
         }        
@@ -595,6 +656,8 @@ font-size: 40px;
             width: 400px;
         }  
         .create-task {
+            overflow: hidden;
+            height: 123vh;
             width: 100vw;
         } 
         .create-top h1 {
@@ -602,6 +665,9 @@ font-size: 40px;
         }                     
 }
 @media screen and (max-width:414px){
+    .footer-menu i{
+        left:.9rem;
+    }
     .recent-list li {
         margin-bottom: .4rem;
         font-size: 14px;    
@@ -649,9 +715,10 @@ font-size: 40px;
 
 }
 @media screen and (max-width:360px){
-    .footer-menu{
-        left: 3.9rem;
-        font-size: 35px;
+    .footer-menu i{
+        margin-top: .5rem;
+        left:1rem;
+        font-size: 20px;
     }
     .ongoing-title, .buttom-header h3 {
         font-size: 13px;

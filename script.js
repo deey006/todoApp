@@ -11,6 +11,8 @@ const commentInput = document.querySelector('#comment')
 const submitBtn = document.querySelector('.submit-btn')
 const cardContainer = document.querySelector('.card-container')
 const recentList = document.querySelector('.recent-list')
+const footerMenu = document.querySelector('.footer-menu')
+const footerButtons = document.querySelector('.footer-buttons')
 
 // GLOBAL VARIABLES
 let li_P;
@@ -20,10 +22,19 @@ let comment_P;
 let isValid = false
 let pass = false
 
-
+// TOGGLE NAVBAR
+function toggleClass() {
+    footerButtons.classList.toggle('left')
+}
 addedTop.style.display ='none'
 addedLine.style.display ='none'
 
+let date = new Date()
+let year = date.getFullYear()
+let month = ("0" + (date.getMonth() + 1 )).slice(-2)
+let day =  ("0" + date.getDate()).slice(-2)
+let maxDate = (year + '-' + month + ('-' + day))
+deadlineInput.setAttribute('min', maxDate)
 
 // OPEN THE ADD FORM PAGE 
 function openAddTask () {
@@ -42,12 +53,19 @@ function createElements () {
     let dateEl = document.createElement('div')
     let commentEl = document.createElement('div')
     let titleEl = document.createElement('div')
+    let cardButtons = document.createElement('div')
     let liEl = document.createElement('li')
+    btnComplete = document.createElement('button')
+    btnDelete = document.createElement('button')
+
     // ADDING CLASSLISTS TO THE CREATED DIV ELEMENTS
     cardEl.classList.add('cards')
     titleEl.classList.add('card-title')
-    dateEl.classList.add('days-left')
-    commentEl.classList.add('card-body')
+    dateEl.classList.add('card-body')
+    commentEl.classList.add('days-left')
+    cardButtons.classList.add('card-buttons')
+    btnComplete.classList.add('task-complete')
+    btnDelete.classList.add('delete-task')
     // CREATING TEXT ELEMENT
     title_H3 = document.createElement('h3')
     date_P = document.createElement('p')
@@ -58,10 +76,13 @@ function createElements () {
     dateEl.appendChild(date_P)
     commentEl.appendChild(comment_P)
     liEl.appendChild(li_P)
+    cardButtons.appendChild(btnComplete)
+    cardButtons.appendChild(btnDelete)
     //  ATTACHING THE DIV ELEMENTS TO A DIV CONTAINER
     cardEl.appendChild(titleEl)
     cardEl.appendChild(dateEl)
     cardEl.appendChild(commentEl)
+    cardEl.appendChild(cardButtons)
     // ATTACHING THE DIV CONTAINER TO AN OVERALL CONTAINER
     cardContainer.append(cardEl)
     recentList.append(liEl)
@@ -73,6 +94,8 @@ function innerText () {
     date_P.innerText =  commentInput.value;
     comment_P.innerText = 'Deadline:' + " " + deadlineInput.value
     li_P.innerHTML = titleInput.value;
+    btnDelete.innerHTML = 'Delete'
+    btnComplete.innerHTML = 'Complete'
 }
 
 // validating form
@@ -103,6 +126,7 @@ function addTask (e) {
 }
 
 // ADDING EVENTS TO ELEMENTS
+footerMenu.addEventListener('click', toggleClass)
 addTaskBtn.addEventListener('click', openAddTask)
 plusBtn.addEventListener('click', openAddTask)
 cancelBtn.addEventListener('click', closeAddform)
