@@ -495,7 +495,7 @@ display: none;
         transition: ease-in 1s;
     }
     .left{
-        left: -5rem;
+        left: 0rem;
     }
     .footer-menu i{
         left:rem;
