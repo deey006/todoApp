@@ -488,7 +488,7 @@ display: none;
         align-items: stretch;
         justify-content: space-evenly;
         top: 5rem;
-        left: 0rem;
+        left: -5rem;
         bottom: 0;
         width: 5rem;
         height: 100vw;
