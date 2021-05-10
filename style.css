@@ -183,12 +183,12 @@ body {
 }
 .cards {
     width: 100px;
-    height: 330px;
+    height: auto;
     display: inline-block;
     margin-right: 1.5rem;
     box-shadow: -10px 5px 30px 10px rgba(122, 121, 121, 0.5);  
     min-width: 220px; 
-    padding: .5rem 1.3rem;
+    padding: .5rem 1.3rem 1.5rem 1.3rem;
 
 }
 .card-title h3 {
@@ -218,7 +218,7 @@ body {
     font-size: 18px;
 }
 .footer-buttons {
-    top: 68.9rem;
+    top: 64.43rem;
     position: fixed;
     z-index: 4;
     display: flex;
@@ -452,7 +452,7 @@ display: none;
 }
 @media screen and (max-width:768px){
     .cancel {
-        top: 1rem;
+        top: 1.5rem;
         left:80%;
         font-size: 28px;
     }

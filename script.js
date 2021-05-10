@@ -13,6 +13,11 @@ const cardContainer = document.querySelector('.card-container')
 const recentList = document.querySelector('.recent-list')
 const footerMenu = document.querySelector('.footer-menu')
 const footerButtons = document.querySelector('.footer-buttons')
+const toRemove = document.querySelector('#to-remove')
+const completeEl = document.querySelector('#complete')
+const incompleteEl = document.querySelector('#incomplete')
+const pendingEl = document.querySelector('#pending')
+
 
 // GLOBAL VARIABLES
 let li_P;
@@ -21,7 +26,8 @@ let date_P;
 let comment_P; 
 let isValid = false
 let pass = false
-
+let isChecking = 0
+toRemove.style.display = 'block'
 // TOGGLE NAVBAR
 function toggleClass() {
     footerButtons.classList.toggle('left')
@@ -29,6 +35,7 @@ function toggleClass() {
 addedTop.style.display ='none'
 addedLine.style.display ='none'
 
+// date input setting minumum date to today's date
 let date = new Date()
 let year = date.getFullYear()
 let month = ("0" + (date.getMonth() + 1 )).slice(-2)
@@ -44,7 +51,13 @@ function openAddTask () {
 // CLOSE THE ADD FORM PAGE
 function closeAddform () {
     createTask.style.display ='none'
+    submitBtn.disabled = false
+    plusBtn.disabled = false   
+    addedTop.style.display ='none'
+    addedLine.style.display ='none' 
 }
+
+// let btnDelete
 
 // CREATING HTML ELEMENTS
 function createElements () {
@@ -88,6 +101,8 @@ function createElements () {
     recentList.append(liEl)
 }
 
+let btnComplete;
+let btnDelete
 function innerText () {
     createElements()
     title_H3.innerText = titleInput.value;
@@ -112,18 +127,69 @@ function validateForm () {
         deadlineInput.style.border = '2px solid green'
         commentInput.style.border = '2px solid green'
         addedTop.style.display ='block'
-        addedLine.style.display ='block'    
+        addedLine.style.display ='block' 
+        submitBtn.disabled = true
+        plusBtn.disabled = true  
+        addedTop.style.display ='block'
+        addedLine.style.display ='block' 
+ 
         return;
     }
+}
+let total = 0
+let isComplete = 0
+let ispending = 0
+let isIncomplete = 0
+let secondTotal;
+function add (e) {
+    if(e.target === btnComplete)
+        isComplete += 1
+        secondTotal -= 1
+        let completePercentage = (isComplete/ispending) * 100
+        completeEl.innerText = `${completePercentage}%`        
+}
+// deleting Todos
+function clicked(e) {
+    isChecking --
+    total --
+    let incompletePercentage = (secondTotal/total) * 100
+    incompleteEl.innerText = `${incompletePercentage}%`    
+    pendingEl.innerText = `${incompletePercentage}%`    
+if(secondTotal === 0){
+    incompleteEl.innerText = `${0}%`    
+    pendingEl.innerText = `${0}%`    
+}
+    if (isChecking > 0){
+        toRemove.style.display = 'none'
+    }else{
+        toRemove.style.display = 'block'
+        li_P.innerHTML = 'No Recently Added Task';
+    }
+
+    e.path[2].remove()
 }
 
 // ADDING A TASK FUCTION
 function addTask (e) {
     e.preventDefault()
+    isChecking ++
+    ispending++
+    total ++
     // GETTING VALUES FROM THE ADD TASK INPUT FIELD
      validateForm()
-
+     secondTotal = total
+     if (isChecking > 0){
+        toRemove.style.display = 'none'
+        incompleteEl.innerText = `${(total / total) * 100}%`    
+        pendingEl.innerText = `${(total / total) * 100}%`       
+    }else{
+        toRemove.style.display = 'block'
+    }
+     btnDelete.addEventListener('click', clicked)
+     btnComplete.addEventListener('click', add)
+     
 }
+
 
 // ADDING EVENTS TO ELEMENTS
 footerMenu.addEventListener('click', toggleClass)
