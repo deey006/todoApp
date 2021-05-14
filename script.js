@@ -17,8 +17,24 @@ const toRemove = document.querySelector('#to-remove')
 const completeEl = document.querySelector('#complete')
 const incompleteEl = document.querySelector('#incomplete')
 const pendingEl = document.querySelector('#pending')
+const myName = document.querySelector('.my-name')
+const myDate = document.querySelector('.date')
+const fileInput = document.querySelector('#upload')
+const uploadBtn = document.querySelector('#upload-Btn')
+const upload = document.querySelector('#my-img')
 
-
+fileInput.addEventListener('change', function() {
+    const chosen = this.files[0];
+    if (chosen) {
+        const reader = new FileReader();
+        reader.addEventListener('load', function () {
+            upload.setAttribute('src', reader.result)
+        })
+        reader.readAsDataURL(chosen)
+    }
+})
+var isname = prompt('what is your name')
+myName.innerHTML = isname
 // GLOBAL VARIABLES
 let li_P;
 let title_H3; 
@@ -42,6 +58,8 @@ let month = ("0" + (date.getMonth() + 1 )).slice(-2)
 let day =  ("0" + date.getDate()).slice(-2)
 let maxDate = (year + '-' + month + ('-' + day))
 deadlineInput.setAttribute('min', maxDate)
+mon = ['January', 'February', 'March', 'April', 'May', 'june', 'July', 'August', 'September', 'October', 'November', 'December']
+myDate.textContent = `${mon[date.getMonth()]} ${date.getDate()}, ${year}`
 
 // OPEN THE ADD FORM PAGE 
 function openAddTask () {
